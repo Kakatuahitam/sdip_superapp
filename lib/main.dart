@@ -42,7 +42,10 @@ void main() async {
   await di.setup();
   configureApp();
 
-  await AndroidAlarmManager.initialize();
+  if (!kIsWeb) {
+    await AndroidAlarmManager.initialize();
+  }
+
   await initializeDateFormatting('id_ID', null).then((_) => runApp(const MyApp()));
   // runApp(const MyApp());
   // final int alarmID = 0;
