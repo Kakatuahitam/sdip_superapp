@@ -17,9 +17,6 @@ import 'package:sdip_superapp/util/routes/go_router_config.dart';
 import 'package:sdip_superapp/common/constants.dart';
 import 'package:sdip_superapp/common/utils.dart';
 
-import 'package:sdip_superapp/presentation/bloc/login/login_cubit.dart';
-import 'package:sdip_superapp/presentation/bloc/screenlock/screenlock_cubit.dart';
-
 // @pragma('vm:entry-point')
 // void printHello() {
 //   final DateTime now = DateTime.now();
@@ -70,8 +67,8 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       /// state navigation (provider and bloc)
       providers: [
-        BlocProvider(create: (_) => di.getIt<LoginCubit>()),
-        BlocProvider(create: (_) => di.getIt<IsScreenLockEnabled>()),
+        // BlocProvider(create: (_) => di.getIt<LoginCubit>()),
+        // BlocProvider(create: (_) => di.getIt<IsScreenLockEnabled>()),
       ],
       child: MaterialApp.router(
         routerConfig: mainRouter,

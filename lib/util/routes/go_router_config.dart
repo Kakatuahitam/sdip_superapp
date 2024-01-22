@@ -8,13 +8,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:sdip_superapp/presentation/page/s/error_page.dart';
 import 'package:sdip_superapp/presentation/page/s/home_page.dart';
-import 'package:sdip_superapp/presentation/page/s/barcode_page.dart';
-import 'package:sdip_superapp/presentation/page/s/screenlock_page.dart';
-import 'package:sdip_superapp/presentation/page/s/kiosk_page.dart';
-import 'package:sdip_superapp/presentation/page/s/barrier_page.dart';
-import 'package:sdip_superapp/presentation/page/s/fg_task_page.dart';
-import 'package:sdip_superapp/presentation/page/s/screenlocksetting_page.dart';
-// import 'package:sdip_superapp/presentation/page/s/lock_page.dart';
 
 GoRouter mainRouter = GoRouter(
   errorBuilder: (context, state) => ErrorPageSmall(),
@@ -37,32 +30,7 @@ GoRouter mainRouter = GoRouter(
 
           // This is must be server rendered. Find a way to do it only for giving meta tags
         }
-        // return const MyHomePage();
-
-        final now = DateTime.now().toUtc();
-        final lock_start = DateTime(now.year, now.month, now.day, 08, 00, 00).toUtc();
-        final lock_end = DateTime(now.year, now.month, now.day, 08, 16, 18).toUtc();
-
-        final secondsRemaining = lock_end.difference(now);
-
-        var seconds = 0;
-
-        if (secondsRemaining.inSeconds < 0) {
-          seconds = 0;
-        } else {
-          seconds = secondsRemaining.inSeconds;
-        }
-
-        print(seconds);
-        if (now.isBefore(lock_start) && now.isAfter(lock_end)) {
-          print("is not locked");
-          return const MyHomePage();
-        } else if (now.isAfter(lock_start) && now.isBefore(lock_end)){
-          print("is locked");
-          return ScreenLockPageSmall(seconds: seconds);
-        } else {
-          return MyHomePage();
-        }
+        return const MyHomePage();
       },
     ),
   ],
