@@ -17,6 +17,12 @@ import 'package:sdip_superapp/util/routes/go_router_config.dart';
 import 'package:sdip_superapp/common/constants.dart';
 import 'package:sdip_superapp/common/utils.dart';
 
+<<<<<<< HEAD
+=======
+import 'package:sdip_superapp/presentation/bloc/login/login_cubit.dart';
+import 'package:sdip_superapp/presentation/bloc/screenlock/screenlock_cubit.dart';
+
+>>>>>>> e322944f2f33536aa644c9dfb1f9d7d30123d9dc
 // @pragma('vm:entry-point')
 // void printHello() {
 //   final DateTime now = DateTime.now();
@@ -39,7 +45,14 @@ void main() async {
   await di.setup();
   configureApp();
 
+<<<<<<< HEAD
   await AndroidAlarmManager.initialize();
+=======
+  if (!kIsWeb) {
+    await AndroidAlarmManager.initialize();
+  }
+
+>>>>>>> e322944f2f33536aa644c9dfb1f9d7d30123d9dc
   await initializeDateFormatting('id_ID', null).then((_) => runApp(const MyApp()));
   // runApp(const MyApp());
   // final int alarmID = 0;
@@ -67,8 +80,13 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       /// state navigation (provider and bloc)
       providers: [
+<<<<<<< HEAD
         // BlocProvider(create: (_) => di.getIt<LoginCubit>()),
         // BlocProvider(create: (_) => di.getIt<IsScreenLockEnabled>()),
+=======
+        BlocProvider(create: (_) => di.getIt<LoginCubit>()),
+        BlocProvider(create: (_) => di.getIt<IsScreenLockEnabled>()),
+>>>>>>> e322944f2f33536aa644c9dfb1f9d7d30123d9dc
       ],
       child: MaterialApp.router(
         routerConfig: mainRouter,
