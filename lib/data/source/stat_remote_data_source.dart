@@ -1,5 +1,5 @@
-import 'package:pramukajaksel_or_id_fe/data/service/api_service.dart';
-import 'package:pramukajaksel_or_id_fe/data/model/get_home_stat_model.dart';
+import 'package:sdip_superapp/data/service/api_service.dart';
+import 'package:sdip_superapp/data/model/get_home_stat_model.dart';
 
 abstract class StatRemoteDataSource {
   Future<GetHomeStatModel> getHomeStat();

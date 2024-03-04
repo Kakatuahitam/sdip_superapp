@@ -1,4 +1,4 @@
-import 'package:pramukajaksel_or_id_fe/data/service/secure_service.dart';
+import 'package:sdip_superapp/data/service/secure_service.dart';
 // import 'package:rafani/data/model/authentication_save_token_model.dart';
 
 abstract class AuthenticationSecureDataSource {

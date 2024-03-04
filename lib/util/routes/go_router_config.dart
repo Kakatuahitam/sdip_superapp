@@ -8,16 +8,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:sdip_superapp/presentation/page/s/error_page.dart';
 import 'package:sdip_superapp/presentation/page/s/home_page.dart';
-<<<<<<< HEAD
-=======
-import 'package:sdip_superapp/presentation/page/s/barcode_page.dart';
-import 'package:sdip_superapp/presentation/page/s/screenlock_page.dart';
-import 'package:sdip_superapp/presentation/page/s/kiosk_page.dart';
-import 'package:sdip_superapp/presentation/page/s/barrier_page.dart';
-import 'package:sdip_superapp/presentation/page/s/fg_task_page.dart';
-import 'package:sdip_superapp/presentation/page/s/screenlocksetting_page.dart';
-// import 'package:sdip_superapp/presentation/page/s/lock_page.dart';
->>>>>>> e322944f2f33536aa644c9dfb1f9d7d30123d9dc
+import 'package:sdip_superapp/presentation/page/s/dashboard_page.dart';
+import 'package:sdip_superapp/presentation/page/s/login_page.dart';
 
 GoRouter mainRouter = GoRouter(
   errorBuilder: (context, state) => ErrorPageSmall(),
@@ -40,76 +32,23 @@ GoRouter mainRouter = GoRouter(
 
           // This is must be server rendered. Find a way to do it only for giving meta tags
         }
-<<<<<<< HEAD
         return const MyHomePage();
-=======
-        // return const MyHomePage();
-
-        final now = DateTime.now().toUtc();
-        final lock_start = DateTime(now.year, now.month, now.day, 08, 00, 00).toUtc();
-        final lock_end = DateTime(now.year, now.month, now.day, 08, 16, 18).toUtc();
-
-        final secondsRemaining = lock_end.difference(now);
-
-        var seconds = 0;
-
-        if (secondsRemaining.inSeconds < 0) {
-          seconds = 0;
-        } else {
-          seconds = secondsRemaining.inSeconds;
-        }
-
-        print(seconds);
-        if (now.isBefore(lock_start) && now.isAfter(lock_end)) {
-          print("is not locked");
-          return const MyHomePage();
-        } else if (now.isAfter(lock_start) && now.isBefore(lock_end)){
-          print("is locked");
-          return ScreenLockPageSmall(seconds: seconds);
-        } else {
-          return MyHomePage();
-        }
       },
     ),
 
     GoRoute(
-      name: "barcode_page",
-      path: "/barcode",
+      name: "dashboard_page",
+      path: "/dashboard",
       builder: (context, state) {
-        return const BarcodePageSmall();
+        return const StudentsDashboardPageSmall();
       },
     ),
 
     GoRoute(
-      name: "kiosk_page",
-      path: "/kiosk",
+      name: "login_page",
+      path: "/login",
       builder: (context, state) {
-        return const KioskPageSmall();
-      },
-    ),
-
-    GoRoute(
-      name: "barrier_page",
-      path: "/barrier",
-      builder: (context, state) {
-        return const BarrierPageSmall();
-      },
-    ),
-
-    GoRoute(
-      name: "fg_task_page",
-      path: "/foreground-task",
-      builder: (context, state) {
-        return const ForegroundTaskPageSmall();
-      },
-    ),
-
-    GoRoute(
-      name: "screenlock_page",
-      path: "/screenlock",
-      builder: (context, state) {
-        return const ScreenLockSettingPageSmall();
->>>>>>> e322944f2f33536aa644c9dfb1f9d7d30123d9dc
+        return const LoginPageSmall();
       },
     ),
   ],

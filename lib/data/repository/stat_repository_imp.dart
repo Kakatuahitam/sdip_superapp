@@ -1,10 +1,10 @@
 import 'dart:io';
 import 'package:dartz/dartz.dart';
 
-import 'package:pramukajaksel_or_id_fe/data/helper/failure_exception.dart';
-import 'package:pramukajaksel_or_id_fe/data/source/stat_remote_data_source.dart';
-import 'package:pramukajaksel_or_id_fe/domain/entity/get_home_stat_response.dart';
-import 'package:pramukajaksel_or_id_fe/domain/repository/stat_repository.dart';
+import 'package:sdip_superapp/data/helper/failure_exception.dart';
+import 'package:sdip_superapp/data/source/stat_remote_data_source.dart';
+import 'package:sdip_superapp/domain/entity/get_home_stat_response.dart';
+import 'package:sdip_superapp/domain/repository/stat_repository.dart';
 
 class StatRepositoryImp extends StatRepository {
   final StatRemoteDataSource remote;

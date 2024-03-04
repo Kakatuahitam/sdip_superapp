@@ -1,11 +1,11 @@
 import 'dart:io';
 import 'package:dartz/dartz.dart';
 
-import 'package:pramukajaksel_or_id_fe/data/helper/failure_exception.dart';
-import 'package:pramukajaksel_or_id_fe/data/source/news_remote_data_source.dart';
-import 'package:pramukajaksel_or_id_fe/domain/entity/get_news_details_response.dart';
-import 'package:pramukajaksel_or_id_fe/domain/entity/post_news_details_response.dart';
-import 'package:pramukajaksel_or_id_fe/domain/repository/news_repository.dart';
+import 'package:sdip_superapp/data/helper/failure_exception.dart';
+import 'package:sdip_superapp/data/source/news_remote_data_source.dart';
+import 'package:sdip_superapp/domain/entity/get_news_details_response.dart';
+import 'package:sdip_superapp/domain/entity/post_news_details_response.dart';
+import 'package:sdip_superapp/domain/repository/news_repository.dart';
 
 class NewsRepositoryImp extends NewsRepository {
   final NewsRemoteDataSource remote;

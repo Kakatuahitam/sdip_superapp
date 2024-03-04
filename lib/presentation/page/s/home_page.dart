@@ -43,57 +43,13 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             ElevatedButton(
               onPressed: buttonEnabled ? () => {
-                context.pushReplacementNamed('barcode_page'),
+                context.goNamed('students_dashboard_page'),
               } : null,
 
               style: ElevatedButton.styleFrom(
                 shape: const StadiumBorder(),
               ),
-              child: Text('Barcode Page', style: ThemeText.standardFormFieldP),
-            ),
-
-            ElevatedButton(
-              onPressed: buttonEnabled ? () => {
-                context.pushReplacementNamed('kiosk_page'),
-              } : null,
-
-              style: ElevatedButton.styleFrom(
-                shape: const StadiumBorder(),
-              ),
-              child: Text('Kiosk Page', style: ThemeText.standardFormFieldP),
-            ),
-
-            ElevatedButton(
-              onPressed: buttonEnabled ? () => {
-                context.pushReplacementNamed('barrier_page'),
-              } : null,
-
-              style: ElevatedButton.styleFrom(
-                shape: const StadiumBorder(),
-              ),
-              child: Text('Barrier Page', style: ThemeText.standardFormFieldP),
-            ),
-
-            ElevatedButton(
-              onPressed: buttonEnabled ? () => {
-                context.pushReplacementNamed('fg_task_page'),
-              } : null,
-
-              style: ElevatedButton.styleFrom(
-                shape: const StadiumBorder(),
-              ),
-              child: Text('Foreground Task Page', style: ThemeText.standardFormFieldP),
-            ),
-
-            ElevatedButton(
-              onPressed: buttonEnabled ? () => {
-                context.pushReplacementNamed('screenlock_page'),
-              } : null,
-
-              style: ElevatedButton.styleFrom(
-                shape: const StadiumBorder(),
-              ),
-              child: Text('Screenlock Page', style: ThemeText.standardFormFieldP),
+              child: Text('Students Dashboard', style: ThemeText.standardFormFieldP),
             ),
           ],
         ),

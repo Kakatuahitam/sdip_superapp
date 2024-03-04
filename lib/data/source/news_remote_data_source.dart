@@ -1,6 +1,6 @@
-import 'package:pramukajaksel_or_id_fe/data/service/api_service.dart';
-import 'package:pramukajaksel_or_id_fe/data/model/get_news_details_model.dart';
-import 'package:pramukajaksel_or_id_fe/data/model/post_news_details_model.dart';
+import 'package:sdip_superapp/data/service/api_service.dart';
+import 'package:sdip_superapp/data/model/get_news_details_model.dart';
+import 'package:sdip_superapp/data/model/post_news_details_model.dart';
 
 abstract class NewsRemoteDataSource {
   Future<GetNewsDetailsModel> getNewsDetails(news_id);

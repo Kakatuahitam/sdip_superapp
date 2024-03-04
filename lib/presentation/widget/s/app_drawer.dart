@@ -36,7 +36,129 @@ class _AppDrawerState extends State<AppDrawerSmall> {
     //     ),
     //   ),
     // );
-    return _Copyright();
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          _DrawerHeader(),
+          _HomeButton(),
+          _LoginButton(),
+          _ProfileButton(),
+
+          _Divider(),
+          _DashboardButton(),
+
+          _Divider(),
+          _Copyright(),
+        ],
+      ),
+    );
+  }
+  Widget _DrawerHeader() {
+    return DrawerHeader(
+      decoration: BoxDecoration(color: Constant.DS_PURPLE),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          CircleAvatar(
+            // backgroundImage: ExactAssetImage('images/icons/tunas_kelapa_240px_circ.png'),
+            backgroundColor: Constant.LS_ECRU_WHITE,
+            radius: 32.0,
+          ),
+          const SizedBox(height: 8.0),
+          Text('Welcome {username}!', style: ThemeText.subtitleW),
+          Text('{role}', style: ThemeText.standardNormalW),
+        ],
+      ),
+    );
+  }
+
+  Widget _HomeButton() {
+    return ListTile(
+      title: Row(
+        children: [
+          Text('Home', style: ThemeText.standardNormalP),
+        ],
+      ),
+      onTap: () {
+        context.goNamed('home_page');
+      },
+    );
+  }
+
+  Widget _LoginButton() {
+    return ListTile(
+      title: Row(
+        children: [
+          Text('Masuk', style: ThemeText.standardNormalP),
+        ],
+      ),
+      onTap: () {
+        context.goNamed('login_page');
+      },
+    );
+  }
+
+  Widget _LogoutButton() {
+    return ListTile(
+      title: Row(
+        children: [
+          Text('Keluar', style: ThemeText.standardNormalP),
+        ],
+      ),
+      onTap: () {
+        context.pushReplacementNamed('logout');
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text("Logout berhasil"),
+          ),
+        );
+      },
+    );
+  }
+
+  // Widget _LoginOrLogoutButton() {
+  //   return BlocBuilder<LoginCubit, LoginState>(
+  //     builder: (context, state) {
+  //       context.read<LoginCubit>().checkIfLoggedIn();
+  //
+  //       if (state is LoggedInState) {
+  //         return _LogoutButton();
+  //       } else if (state is LoggedOutState){
+  //         return _LoginButton();
+  //       } else {
+  //         return _LoginButton();
+  //       }
+  //     }
+  //   );
+  // }
+
+  Widget _ProfileButton() {
+    return ListTile(
+      title: Row(
+        children: [
+          Text('My Profile', style: ThemeText.standardNormalP),
+        ],
+      ),
+      onTap: () {
+        context.goNamed('profile_page');
+      },
+    );
+  }
+
+  Widget _DashboardButton() {
+    return ListTile(
+      title: Row(
+        children: [
+          Text('Dashboard', style: ThemeText.standardNormalP),
+        ],
+      ),
+      onTap: () {
+        context.goNamed('dashboard_page');
+      },
+    );
   }
 
   Widget _Empty() {
@@ -49,7 +171,7 @@ class _AppDrawerState extends State<AppDrawerSmall> {
 
   Widget _Copyright() {
     return ListTile(
-      title: Text('© Pusinfo Kwartir Cabang Jakarta Selatan 2023', style: ThemeText.standardMiniP)
+      title: Text('© IT Division of SD Islam Pembangunan 2024', style: ThemeText.standardMiniP)
     );
   }
 }
